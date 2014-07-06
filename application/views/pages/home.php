@@ -1,6 +1,9 @@
-<h2>Funktion auswählen</h2>
+<?php $this->load->helper('url');?>
+
+<h2>Funktion auswÃ¤hlen</h2>
+<p> <?php echo anchor('book/create','BÃ¼cher eintragen')?> </p>
 <p><b><em>ToDo:</em></b> Links erstellen zum:<br>
-- Eintragen neuer Bücher<br>
-- Anzeigen aller Bücher in der Datenbank
+- Eintragen neuer Bï¿½cher -> DONE<br>
+- Anzeigen aller Bï¿½cher in der Datenbank
 </p>
-<p><b><em>Später:</em></b> Auswahl weiterer Funktionen</p>
+<p><b><em>Spï¿½ter:</em></b> Auswahl weiterer Funktionen</p>
