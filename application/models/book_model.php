@@ -6,7 +6,7 @@ class Book_model extends CI_Model
 		$this->load->database();
 	}
 	
-	public function get_books($id = FALSE)
+	public function get_book($id = FALSE)
 	{
 		if ($id === FALSE)
 		{

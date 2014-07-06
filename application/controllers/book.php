@@ -6,16 +6,14 @@ class Book extends CI_Controller {
 		$this->load->model('book_model');
 	}
 
-	/*
 	public function index() {
-		$data['news'] = $this->news_model->get_news();
-		$data['title'] = 'News archive';
+		$data['book'] = $this->book_model->get_book();	//ohne Argument -> alle Bücher aus DB
+		$data['title'] = 'Alle Bücher';
 
 		$this->load->view('templates/header',$data);
-		$this->load->view('/news/index',$data);
+		$this->load->view('/book/index',$data);
 		$this->load->view('templates/footer',$data);
 	}
-	*/
 
 	/*
 	 public function view($slug)

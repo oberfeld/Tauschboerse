@@ -13,6 +13,9 @@
 	<label for="isbn">ISBN-Nr</label>
 	<input type="input" name="isbn" /><br />
 	
+	<label for="YearOfPublication">Erscheinungsjahr</label>
+	<input type="input" name="YearOfPublication" /><br />
+	
 	<label for="comment">Kommentar</label>
 	<textarea name="comment"></textarea><br />
 	
