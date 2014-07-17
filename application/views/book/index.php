@@ -1,31 +1,36 @@
-<?php $this->load->helper('url');?>
+<?php 
+include APPPATH . 'views/templates/header.php';
 
+$this->load->helper('url');
+
+echo '
 <table border="1" width="100%">
   <!--  <colgroup>
-    <col width="1*">
     <col width="3*">
     <col width="3*">
   </colgroup>-->
   <tr>
-    <th>Id</th>
     <th>Autor</th>
     <th>Titel</th>
     <th>Details</th>
     <th>Bearbeiten</th>
     <th>Löschen</th>
-  </tr>
-
-<?php foreach ($book as $book_item):?>
+  </tr>';
+		 
+foreach ($book->result() as $book_item) {
+echo'
   <tr>
-	<td><?php echo $book_item['id']?></td>
-	<td><?php echo $book_item['author']?></td>
-	<td><?php echo $book_item['title']?></td>
+	<td>' . $book_item->author . '</td>
+	<td>' . $book_item->title . '</td>
 	<td>ToDo: Link</td>
 	<td>ToDo: Link</td>
 	<td>ToDo: Link</td>
-  </tr>	
-<?php endforeach ?>
+  </tr>';	
+}
 
-</table>
+echo 
+'</table>
 
-<p><?php echo anchor('', 'Startseite'); ?></p>
+<p>' . anchor('', 'Startseite') . '</p>';
+
+include APPPATH . 'views/templates/footer.php';

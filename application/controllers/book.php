@@ -3,9 +3,11 @@ class Book extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		
 		$this->load->model('book_model');
 	}
 
+	/*
 	public function index() {
 		$data['book'] = $this->book_model->get_book();	//ohne Argument -> alle Bücher aus DB
 		$data['title'] = 'Alle Bücher';
@@ -13,6 +15,19 @@ class Book extends CI_Controller {
 		$this->load->view('templates/header',$data);
 		$this->load->view('/book/index',$data);
 		$this->load->view('templates/footer',$data);
+	}
+	*/
+	/**
+	 * Index Page for this controller.
+	 */
+	public function index()
+	{
+		$this->data['book'] = book_model::getAll();
+		$this->data['title'] = 'Alle Bücher';
+		
+		//$this->load->view('templates/header',$this->data);
+		$this->load->view('/book/index',$this->data);
+		//$this->load->view('templates/footer',$this->data);
 	}
 
 	/*
