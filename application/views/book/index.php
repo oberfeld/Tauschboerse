@@ -1,3 +1,5 @@
+<?php $this->load->helper('url');?>
+
 <table border="1" width="100%">
   <!--  <colgroup>
     <col width="1*">
@@ -25,3 +27,5 @@
 <?php endforeach ?>
 
 </table>
+
+<p><?php echo anchor('', 'Startseite'); ?></p>

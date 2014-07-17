@@ -22,8 +22,10 @@ class Book_model extends CI_Model
 		$data = array(
 				'author' => $this->input->post('author'),
 				'title' => $this->input->post('title'),
-				'isbn' => $this->input->post('isbn'),
+				'publisher' => $this->input->post('publisher'),
 				'YearOfPublication' => $this->input->post('YearOfPublication'),
+				'edition' => $this->input->post('edition'),
+				'isbn' => $this->input->post('isbn'),
 				'comment' => $this->input->post('comment')
 		);
 	
