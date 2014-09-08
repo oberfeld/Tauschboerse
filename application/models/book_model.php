@@ -1,11 +1,25 @@
 <?php
 class Book_model extends CI_Model
 {
+	public $id = 0;
+	public $author = '';
+	public $title = '';
+	public $publisher = '';
+	public $YearOfPublication = 0;
+	public $edition = 0;
+	public $isbn = '';
+	public $comment = '';
+	public $LastEdited = '';
+	
+	/**
+	 * Konstruktor
+	 */
 	public function __construct()
 	{
-		$this->load->database();
+		//$this->load->database;		Nicht nötig wegen autoload.php: "$autoload['libraries'] = array('database');"
 	}
 	
+	/*
 	public function get_book($id = FALSE)
 	{
 		if ($id === FALSE)
@@ -16,6 +30,18 @@ class Book_model extends CI_Model
 		$query = $this->db->get_where('books',array('id'=>$id));
 		return $query->row_array();
 	}
+	*/
+	/**
+	 * Gets all books out of DataBase
+	 * @return Query Objekt
+	 */
+	public function getAll()
+	{	
+		$this->db->order_by('author', 'asc');
+		$query = $this->db->get('books');
+	
+		return $query;
+	} // End of function getAll()
 	
 	public function set_book()
 	{	

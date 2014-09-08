@@ -1,6 +1,8 @@
 <html>
 <head>
-<title><?php echo $title ?> - Tauschbörse Oberfeld</title>
+<title><?php echo $title ?> - Tauschbï¿½rse Oberfeld</title>
 </head>
 <body>
-	<h1>Tauschbörse Oberfeld</h1>
+	<h1>TauschbÃ¶rse Oberfeld</h1>
+	
+<?php 
