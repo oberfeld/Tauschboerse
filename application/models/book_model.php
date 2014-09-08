@@ -16,7 +16,7 @@ class Book_model extends CI_Model
 	 */
 	public function __construct()
 	{
-		$this->load->database();
+		//$this->load->database;		Nicht nötig wegen autoload.php: "$autoload['libraries'] = array('database');"
 	}
 	
 	/*
@@ -35,12 +35,10 @@ class Book_model extends CI_Model
 	 * Gets all books out of DataBase
 	 * @return Query Objekt
 	 */
-	public static function getAll()
-	{
-		$CI =& get_instance();
-	
-		$CI->db->order_by('author', 'asc');
-		$query = $CI->db->get('books');
+	public function getAll()
+	{	
+		$this->db->order_by('author', 'asc');
+		$query = $this->db->get('books');
 	
 		return $query;
 	} // End of function getAll()

@@ -22,7 +22,7 @@ class Book extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->data['book'] = book_model::getAll();
+		$this->data['book'] = $this->book_model->getAll();
 		$this->data['title'] = 'Alle Bücher';
 		
 		//$this->load->view('templates/header',$this->data);
