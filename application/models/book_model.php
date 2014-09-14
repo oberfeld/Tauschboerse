@@ -20,6 +20,11 @@ class Book_model extends CI_Model
 	}
 	
 
+	/**
+	 * get one or more books out of Dababase.
+	 * if no $id is passed to the function, all books will be returned.
+	 * @param string $id
+	 */
 	public function get_book($id = FALSE)
 	{
 		if ($id === FALSE)
@@ -31,11 +36,15 @@ class Book_model extends CI_Model
 		return $query->row_array();
 	}
 	
+	/**
+	 * get one or more books out of Dababase.
+	 * if no $id is passed to the function, all books will be returned.
+	 * @param string $id
+	 */
 	public function get_book_2($id = FALSE)
 	{
 		if ($id === FALSE)
 		{
-			//$this->db->order_by('author', 'asc');
 			$query = $this->db->get('books');
 			return $query;
 		}

@@ -16,10 +16,13 @@ echo '
     <th>Bearbeiten</th>
     <th>Löschen</th>
   </tr>';
-		 
-foreach ($book->result() as $book_item) {
-//foreach ($book as $book_item) {
-/*
+
+
+/*	
+/**
+ * Use with book_model->get_book()
+ *   
+foreach ($book as $book_item) {
 	echo'
   <tr>
 	<td>' . $book_item['author'] . '</td>
@@ -30,15 +33,21 @@ foreach ($book->result() as $book_item) {
   </tr>';
 	}
 */	
-echo'
+
+/**
+ * Use with book_model->get_book_2()
+ */
+foreach ($book->result() as $book_item) {
+	echo'
   <tr>
 	<td>' . $book_item->author . '</td>
 	<td>' . $book_item->title . '</td>
 	<td>ToDo: Link</td>
 	<td>ToDo: Link</td>
 	<td>ToDo: Link</td>
-  </tr>';	
+  </tr>';
 }
+
 
 echo 
 '</table>

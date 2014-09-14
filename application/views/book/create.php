@@ -1,4 +1,7 @@
-<?php $this->load->helper('url');?>
+<?php 
+include APPPATH . 'views/templates/header.php';
+
+$this->load->helper('url');?>
 
 <h2>Buch in Datenbank eintragen</h2>
 
@@ -32,3 +35,5 @@
 	<p><?php echo anchor('', 'Startseite'); ?></p>
 	
 </form>
+
+<?php include APPPATH . 'views/templates/footer.php';?>
