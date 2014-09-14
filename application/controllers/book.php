@@ -7,19 +7,18 @@ class Book extends CI_Controller {
 		$this->load->model('book_model');
 	}
 
-	/*
 	public function index() {
-		$data['book'] = $this->book_model->get_book();	//ohne Argument -> alle Bücher aus DB
+		$data['book'] = $this->book_model->get_book_2();	//ohne Argument -> alle Bücher aus DB
 		$data['title'] = 'Alle Bücher';
 
-		$this->load->view('templates/header',$data);
+		//$this->load->view('templates/header',$data);
 		$this->load->view('/book/index',$data);
-		$this->load->view('templates/footer',$data);
+		//$this->load->view('templates/footer',$data);
 	}
-	*/
 	/**
 	 * Index Page for this controller.
 	 */
+	/*
 	public function index()
 	{
 		$this->data['book'] = $this->book_model->getAll();
@@ -29,6 +28,7 @@ class Book extends CI_Controller {
 		$this->load->view('/book/index',$this->data);
 		//$this->load->view('templates/footer',$this->data);
 	}
+	*/
 
 	/*
 	 public function view($slug)

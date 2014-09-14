@@ -19,7 +19,7 @@ class Book_model extends CI_Model
 		//$this->load->database;		Nicht nötig wegen autoload.php: "$autoload['libraries'] = array('database');"
 	}
 	
-	/*
+
 	public function get_book($id = FALSE)
 	{
 		if ($id === FALSE)
@@ -30,7 +30,19 @@ class Book_model extends CI_Model
 		$query = $this->db->get_where('books',array('id'=>$id));
 		return $query->row_array();
 	}
-	*/
+	
+	public function get_book_2($id = FALSE)
+	{
+		if ($id === FALSE)
+		{
+			//$this->db->order_by('author', 'asc');
+			$query = $this->db->get('books');
+			return $query;
+		}
+		$query = $this->db->get_where('books',array('id'=>$id));
+		return $query();
+	}
+	
 	/**
 	 * Gets all books out of DataBase
 	 * @return Query Objekt

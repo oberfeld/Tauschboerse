@@ -18,6 +18,18 @@ echo '
   </tr>';
 		 
 foreach ($book->result() as $book_item) {
+//foreach ($book as $book_item) {
+/*
+	echo'
+  <tr>
+	<td>' . $book_item['author'] . '</td>
+	<td>' . $book_item['title'] . '</td>
+	<td>ToDo: Link</td>
+	<td>ToDo: Link</td>
+	<td>ToDo: Link</td>
+  </tr>';
+	}
+*/	
 echo'
   <tr>
 	<td>' . $book_item->author . '</td>
