@@ -51,7 +51,6 @@ $this->load->helper('url');?>
 			<textarea class="form-control" rows="3" id="comment" placeholder="Kommentar" name="comment"></textarea>
 		</div>
 	</div>
-	
 	<div class="form-group">
     	<div class="col-sm-offset-2 col-sm-10">
       		<button type="submit" class="btn btn-default" name="submit">Buch eintragen</button>
