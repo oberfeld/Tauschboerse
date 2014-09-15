@@ -46,12 +46,14 @@ $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
 */
 
+/*
 $route['book/create'] = 'book/create';
 $route['book/(:any)'] = 'book/view/$1';
 $route['book'] = 'book';
 $route['(:any)'] = 'pages/view/$1';
+*/
 $route['default_controller'] = 'pages/view';
-
+ 
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -4,12 +4,13 @@ include APPPATH . 'views/templates/header.php';
 $this->load->helper('url');
 
 echo '
-<table border="1" width="100%">
+<table class="table table-condensed table-striped table-hover">
   <!--  <colgroup>
     <col width="3*">
     <col width="3*">
-  </colgroup>-->
+  </colgroup>-->	
   <tr>
+	<th class="hidden">Id</th>	
     <th>Autor</th>
     <th>Titel</th>
     <th>Details</th>
@@ -25,6 +26,7 @@ echo '
 foreach ($book as $book_item) {
 	echo'
   <tr>
+  	<td class="hidden">' . $book_item['id'] . '</td>
 	<td>' . $book_item['author'] . '</td>
 	<td>' . $book_item['title'] . '</td>
 	<td>ToDo: Link</td>
@@ -40,11 +42,12 @@ foreach ($book as $book_item) {
 foreach ($book->result() as $book_item) {
 	echo'
   <tr>
+	<td class="hidden">' . $book_item->id . '</td>		
 	<td>' . $book_item->author . '</td>
 	<td>' . $book_item->title . '</td>
-	<td>ToDo: Link</td>
-	<td>ToDo: Link</td>
-	<td>ToDo: Link</td>
+	<td>' . anchor('book/details/' . $book_item->id, 'Details'). '</td>
+	<td>ToDo: Link B</td>
+	<td>ToDo: Link L</td>
   </tr>';
 }
 

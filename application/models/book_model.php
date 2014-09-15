@@ -48,8 +48,8 @@ class Book_model extends CI_Model
 			$query = $this->db->get('books');
 			return $query;
 		}
-		$query = $this->db->get_where('books',array('id'=>$id));
-		return $query();
+		$query = $this->db->get_where('books', array('id'=>$id));
+		return $query;
 	}
 	
 	/**
