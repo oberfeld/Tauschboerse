@@ -4,11 +4,8 @@ include APPPATH . 'views/templates/header.php';
 $this->load->helper('url');
 
 echo '
-<table class="table table-condensed table-striped table-hover">
-  <!--  <colgroup>
-    <col width="3*">
-    <col width="3*">
-  </colgroup>-->	
+
+<table class="table table-condensed table-striped table-hover">	
   <tr>
 	<th class="hidden">Id</th>	
     <th>Autor</th>

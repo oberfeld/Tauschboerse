@@ -53,6 +53,31 @@ class Book_model extends CI_Model
 	}
 	
 	/**
+	 * Sucht in der DB nach dem Buch mit der entsprechenden ID.
+	 * 
+	 * @param	int			$id
+	 * @return	stdClass	Klasse mit allen DB-Feldern als Attribute
+	 */
+	public function find($id)
+	{
+		$this->db->where('id', $id);
+		$query = $this->db->get('books', 1);
+		
+		//public Felder
+		$this->id = $query->row()->id;
+		$this->author = $query->row()->author;
+		$this->title = $query->row()->title;
+		$this->publisher = $query->row()->publisher;
+		$this->YearOfPublication = $query->row()->YearOfPublication;
+		$this->edition = $query->row()->edition;
+		$this->isbn = $query->row()->isbn;
+		$this->comment = $query->row()->comment;
+		$this->LastEdited = $query->row()->LastEdited;
+
+		return $query->row();
+	}
+	
+	/**
 	 * Gets all books out of DataBase
 	 * @return Query Objekt
 	 */

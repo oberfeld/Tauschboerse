@@ -22,18 +22,17 @@ class Book extends CI_Controller {
 		$this->load->view('/book/booklist',$data);
 	}
 	
-	public function details($id=0){
+	public function details($id = ''){
+		
+		//$this->session->set_userdata('id', intval($id));
+		//$this->$id = intval($id);
+		$id = intval($id);
 		
 		$book = new Book_model();
+		$book->find($id);
+		$this->data['book'] = $book;		
 		
-		$id = (string)$id;
-		
-		$data['book'] = $this->book_model->get_book_2($id);
-		$data['title'] = 'Details';
-		
-		
-		
-		$this->load->view('/book/details',$data);
+		$this->load->view('/book/details',$this->data);
 	}
 	
 
