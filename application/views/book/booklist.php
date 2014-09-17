@@ -43,7 +43,7 @@ foreach ($book->result() as $book_item) {
 	<td>' . $book_item->author . '</td>
 	<td>' . $book_item->title . '</td>
 	<td>' . anchor('book/details/' . $book_item->id, 'Details'). '</td>
-	<td>ToDo: Link B</td>
+	<td>' . anchor('book/edit/' . $book_item->id, 'Bearbeiten'). '</td>
 	<td>ToDo: Link L</td>
   </tr>';
 }

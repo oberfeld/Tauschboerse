@@ -26,7 +26,7 @@ class Book extends CI_Controller {
 		
 		//$this->session->set_userdata('id', intval($id));
 		//$this->$id = intval($id);
-		$id = intval($id);
+		//$id = intval($id);
 		
 		$book = new Book_model();
 		$book->find($id);
@@ -58,5 +58,37 @@ class Book extends CI_Controller {
 			$this->book_model->set_book();
 			$this->load->view('book/success');
 		}
+	}
+	
+	/**
+	 * Save new book in Database
+	 */
+	public function edit($id = '')
+	{
+		$id = intval($id);
+		
+		$book = new Book_model();
+		$book->find($id);
+		$this->data['book'] = $book;
+		
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+	
+		$data['title'] = 'Buch anpassen';
+	
+		$this->form_validation->set_rules('author','Autor','required');
+		$this->form_validation->set_rules('title','Titel','required');
+	
+		$this->load->view('/book/edit', $this->data);
+		
+		return;
+	}
+	
+	public function edit_save()
+	{
+		$id = $this->input->post('book_id');
+		
+		$this->book_model->update_book($id);
+		$this->load->view('book/success');
 	}
 }

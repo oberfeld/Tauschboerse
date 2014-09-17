@@ -1,4 +1,8 @@
-<?php $this->load->helper('url');?>
+<?php 
+
+include APPPATH . 'views/templates/header.php';
+
+$this->load->helper('url');?>
 
 <html>
 <head>
@@ -13,3 +17,5 @@
 
 </body>
 </html>
+
+<?php include APPPATH . 'views/templates/header.php';?> 
