@@ -24,7 +24,7 @@ foreach ($book->result() as $book_item) {
 	<td>' . $book_item->title . '</td>
 	<td>' . anchor('book/details/' . $book_item->id, 'Details'). '</td>
 	<td>' . anchor('book/edit/' . $book_item->id, 'Bearbeiten'). '</td>
-	<td>ToDo: Link L</td>
+	<td>' . anchor('book/remove/' . $book_item->id, 'Löschen'). '</td>
   </tr>';
 }
 

@@ -66,9 +66,7 @@ class Book extends CI_Controller {
 	 * @param string $id
 	 */
 	public function edit($id = '')
-	{
-		$id = intval($id);
-		
+	{		
 		$book = new Book_model();
 		$book->find($id);
 		$this->data['book'] = $book;
@@ -94,5 +92,21 @@ class Book extends CI_Controller {
 		
 		$this->book_model->update_book($id);
 		$this->load->view('book/success');
+	}
+	
+	
+	/**
+	 * Updates the database with changes done in view 'edit'
+	 */
+	public function remove($id = '')
+	{
+		
+		
+		$book = new Book_model();
+		$book->find($id);
+		$this->data['book'] = $book;
+		
+		$this->book_model->remove_book($id);
+		$this->load->view('book/removed', $this->data);
 	}
 }

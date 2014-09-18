@@ -73,6 +73,10 @@ class Book_model extends CI_Model
 		return $query;
 	} // End of function getAll()
 	
+	/**
+	 * Read Form Data from view 'create' and write this data into database
+	 * Entry gets new id automatically
+	 */
 	public function set_book()
 	{	
 		$data = array(
@@ -88,6 +92,10 @@ class Book_model extends CI_Model
 		return $this->db->insert('books', $data);
 	}
 	
+	/**
+	 * Read Form Data from view 'update' and write this data into database
+	 * @param string $id
+	 */
 	public function update_book($id = '')
 	{
 		$data = array(
@@ -102,5 +110,15 @@ class Book_model extends CI_Model
 		
 		$this->db->where('id', $id);
 		$this->db->update('books', $data);
+	}
+	
+	/**
+	 * Delete certain book in database
+	 * @param string $id
+	 */
+	public function remove_book($id = '')
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('books'); 
 	}
 }
