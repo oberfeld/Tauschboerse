@@ -1,6 +1,6 @@
 <?php 
 include APPPATH . 'views/templates/header.php';
-
+ 
 $this->load->helper('url');?>
 
 <h2>Funktion auswählen</h2>
