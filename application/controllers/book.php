@@ -8,26 +8,25 @@ class Book extends CI_Controller {
 		$this->load->model('book_model');
 	}
 
-	
+
 	/**
 	 * Get all books from Database
-	 * Pass them to the view 'index'
-	 * Use get_book() or get_book_2 with corresponding foreach-loop in view
+	 * Pass them to the view 'booklist'
 	 */
 	public function booklist() {
-		//$data['book'] = $this->book_model->get_book();	//ohne Argument -> alle Bücher aus DB
-		$data['book'] = $this->book_model->get_book_2();	//ohne Argument -> alle Bücher aus DB
+		$data['book'] = $this->book_model->get_book();	//ohne Argument -> alle Bücher aus DB
 		$data['title'] = 'Alle Bücher';
 
 		$this->load->view('/book/booklist',$data);
 	}
 	
-	public function details($id = ''){
-		
-		//$this->session->set_userdata('id', intval($id));
-		//$this->$id = intval($id);
-		//$id = intval($id);
-		
+	/**
+	 * Get all attributes of one Book
+	 * Pass attributes to view 'details'
+	 * @param string $id
+	 */
+	public function details($id = '')
+	{
 		$book = new Book_model();
 		$book->find($id);
 		$this->data['book'] = $book;		
@@ -60,8 +59,11 @@ class Book extends CI_Controller {
 		}
 	}
 	
+	
 	/**
-	 * Save new book in Database
+	 * Edit an existing book in Database
+	 * Requires function edit_save()
+	 * @param string $id
 	 */
 	public function edit($id = '')
 	{
@@ -83,7 +85,9 @@ class Book extends CI_Controller {
 		
 		return;
 	}
-	
+	/**
+	 * Updates the database with changes done in view 'edit'
+	 */
 	public function edit_save()
 	{
 		$id = $this->input->post('book_id');

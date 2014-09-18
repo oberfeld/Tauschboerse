@@ -19,29 +19,13 @@ class Book_model extends CI_Model
 		//$this->load->database;		Nicht nötig wegen autoload.php: "$autoload['libraries'] = array('database');"
 	}
 	
-
-	/**
-	 * get one or more books out of Dababase.
-	 * if no $id is passed to the function, all books will be returned.
-	 * @param string $id
-	 */
-	public function get_book($id = FALSE)
-	{
-		if ($id === FALSE)
-		{
-			$query = $this->db->get('books');
-			return $query->result_array();
-		}
-		$query = $this->db->get_where('books',array('id'=>$id));
-		return $query->row_array();
-	}
 	
 	/**
 	 * get one or more books out of Dababase.
 	 * if no $id is passed to the function, all books will be returned.
 	 * @param string $id
 	 */
-	public function get_book_2($id = FALSE)
+	public function get_book($id = FALSE)
 	{
 		if ($id === FALSE)
 		{
