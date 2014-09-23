@@ -1,12 +1,15 @@
 <?php 
 include APPPATH . 'views/templates/header.php';
  
-$this->load->helper('url');?>
+$this->load->helper('url');
 
+echo '
 <h2>Funktion auswählen</h2>
-<p> <?php echo anchor('book/create','Bücher eintragen')?> </p>
-<p> <?php echo anchor('book/booklist','Alle Bücher anzeigen')?> </p>
+<p>'  . anchor('book/create','Bücher eintragen') . ' </p>
+<p>'  . anchor('book/booklist','Alle Bücher anzeigen') . ' </p>
+<p> ' . anchor('book/booklist','Alle Bücher anzeigen', 'class="btn btn-default" role="button"') . ' </p>
 
-<p><b><em>ToDo:</em></b> Auswahl weiterer Funktionen</p>
+<p><b><em>ToDo:</em></b> Auswahl weiterer Funktionen</p>';
 
-<?php include APPPATH . 'views/templates/footer.php';?>
+		
+include APPPATH . 'views/templates/footer.php';?>
